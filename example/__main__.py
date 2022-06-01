@@ -15,7 +15,12 @@ if __name__ == "__main__":
             if color_name == "name":
                 continue
             colors.append(Color.from_hex(hexstr=color_hex, name=color_name))
-        palette = Palette(name=name, colors=colors)
+        palette = Palette(
+            name=name,
+            colors=colors,
+            columns=8,
+            comment_lines=["A terminal theme from https://github.com/Gogh-Co/Gogh"],
+        )
         outpath = root / "Gogh" / f"{name}.gpl"
         outpath.parent.mkdir(exist_ok=True)
         with outpath.open("wb") as outfile:
