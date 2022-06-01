@@ -8,12 +8,13 @@ A Python library to create `.gpl` GIMP palette files.
 from gp import Color, Palette
 
 palette = Palette(
-    name=name,
+    name="foo",
     colors=[
         Color.from_hex("#aabbcc", "color1"),
         Color(red=1, green=2, blue=3, name="color2"),
     ],
 )
+
 with open("foo.gpl", "wb") as f:
     f.write(palette.encode())
 ```
